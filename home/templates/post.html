@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'post.css' %}">
+</head>
+<body>
+
+<form method ="post" id ="main-post"enctype="multipart/form-data">
+{% csrf_token %}
+
+{{ post.as_p }}
+<button type ="submit">Save</button>
+</form>
+</body>
+</html>

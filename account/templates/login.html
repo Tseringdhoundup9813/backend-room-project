@@ -1,0 +1,26 @@
+
+{% extends 'basea.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+
+{% if messages %}
+{% for message in messages %}
+<li id ="messages">{{ message }}</li>
+{% endfor %}
+{% endif %}
+<form method ="post">
+{% csrf_token %}
+<main>
+<div class ="box-login">
+<h1>Login</h1>
+<label for ="username">Username</label>
+<input type ="text"  name ="username"placeholder="username">
+<label for ="password">Pasword</label>
+<input type ="password" name ="password"placeholder="password">
+<button type ="submit">Login</button>
+</div>
+</main>
+</form>
+{% endblock %}

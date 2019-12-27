@@ -1,0 +1,57 @@
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'profile.css' %}">
+
+<div class ="main-post">
+<div class ="main">
+<div class ="profile">
+	<div class ="image">
+	
+	{% if user.profile.image %}
+	<img src ="{{ user.profile.image.url }}">
+	{% else %}
+
+	<div class ="img">
+	<form method ="post" enctype="multipart/form-data">
+		{% csrf_token %}
+	<h2>Upload Image</h2>
+	{{ image.image}}
+	<button type ="submit">Save</button>
+</form>
+
+</div>
+	{% endif %}
+
+
+
+	<!-- end -->
+
+	</div>
+<div class ="information">
+<div class="info-box">
+<h3> <span id ="username">{{ user.username }}</span></h3>
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+<!-- the list of post  -->
+<div class ="post-width">
+
+<div class ="title">
+<h1>The List of  Post you have posted</h1>
+</div>
+
+<!-- list of post -->
+
+<!-- end -->
+
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>home</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+</head>
+<body>
+<header>
+	<ul>
+		<li id ="home"><a href="{% url 'home:home' %}">Home</a></li>
+		{% if user.is_authenticated %}
+		<li><a href="{% url 'account:logout' %}">Logout</a></li>
+		<li><a href="{% url 'home:post' %}">Create</a></li>
+		{% else %}
+
+		<li><a href="{% url 'account:login' %}">Login</a></li>
+		<li><a href="{% url 'account:register' %}">register</a></li>
+		{% endif %}
+		
+		<div class ="ani-mov">
+		</div>
+		<div class ="search">
+			<form>
+			<input type ="text" name="search"placeholder ="Search">
+			<button type ="submit">Search</button>
+		</form>
+		</div>
+	</ul>
+
+</header>
+{% if messages %}
+{% for message in messages %}
+<li id ="messages">{{ message }}</li>
+{% endfor %}
+{% endif %}
+
+<!-- second -->
+
+<div class="filter-room">
+<form>
+	<ul>
+		<li><a id ="room" name ="room" value="room" href="">Room</a></li>
+		<li><a href="">Apartment</a></li>
+		<li><a href="">Hostel</a></li>
+	</ul>
+</form>
+</div>
+
+
+{% block content %}
+
+{% endblock %}
+</div>
+</body>
+</html>

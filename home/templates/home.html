@@ -1,0 +1,53 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+
+{% if messages %}
+{% for message in messages %}
+<li id ="messages">{{ message }}</li>
+{% endfor %}
+{% endif %}
+
+
+{% if user.is_authenticated %}
+<a href ="{% url 'home:profile' %}"><div class ="main-profile">
+{% if user.profile.image %}
+<img src ="{{ user.profile.image.url }}">
+{% else %}
+<h2 id="upload">Upload Image</h2>
+{% endif %}
+</div>
+
+</a>
+{% else %}
+<div class ="main-profile">
+<h3>No profile</h3>
+</div>
+
+
+{% endif %}
+<div class="container">
+{% for post in room %}
+<div class ="box1">
+<a href ="{% url 'home:profile'  %}"><div class ="user-img">
+<img src ="{{ post.user.profile.image.url }}">
+</div>
+</a>
+<h1 id ="title">{{ post.title }}</h1><span id ="hour">{{ post.time|timesince}} ago</span>
+<img src ="{{ post.image.url }}">
+<div class ="Click">Click see more</div>
+<p id ="price">{{ post.price }}</p>
+<p id ="des">{{ post.des|truncatechars:300 }}</p>
+
+</div>
+{% endfor %}
+
+</div>
+{% endblock %}

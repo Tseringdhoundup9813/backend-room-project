@@ -1,0 +1,157 @@
+
+*{
+	margin:0px;
+	padding:0px;
+	box-sizing:border-box;
+
+}
+
+/*first header*/
+li{
+	list-style: none;
+	cursor:pointer;
+}
+a{
+	text-decoration: none;
+
+}
+header ul{
+	width:100%;
+	height:13vh;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	background-color:white;
+	border-bottom:1px solid lightgrey;
+	box-shadow: 0px 0px 5px grey;
+	z-index:2;
+	position: relative;
+	position:fixed;
+	top:0;
+
+}
+header ul li a:hover{
+	color:grey;
+}
+.ani-mov{
+	width:0%;
+	height:5px;
+	background-color:green;
+	position: absolute;
+	bottom:0;
+	animation:co 3s;
+}
+@keyframes co{
+	100%{
+		width:100%;
+	}
+}
+header ul li{
+	padding:0px 2em;
+}
+header ul li a{
+	font-size:22px;
+	color:black;
+
+
+}
+
+/*search bar top*/
+.search{
+	position: absolute;
+	top:19;
+	right:100px;
+}
+.search input{
+	width:250px;
+	font-size:20px;
+	padding:5px;
+	border:none;
+	outline:none;
+	border:1px solid lightgrey;
+	border-radius:10px 0px 0px 10px;
+}
+.search button{
+	border:none;
+	outline:none;
+	font-size:20px;
+	color:white;
+	padding:5px;
+	border:1px solid lightgrey;
+	border-radius:0px 10px 10px 0px;
+	background-color:#2c3e50;
+}
+
+/*second room filter*/
+.filter-room{
+	
+	width:100%;
+	height:30vh;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+
+	
+	
+
+}
+.filter-room ul{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	
+
+}
+.filter-room ul li{
+	width:100px;
+	height:100px;
+	background-color:#34495e;
+	margin:10px;
+	border-radius:50%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	animation:cir 3s forwards;
+	transform:translateY(-140px);
+	transition:all 3s;
+	z-index:1;
+	cursor:pointer;
+}
+.filter-room ul li:nth-child(1){
+	background-color:#2980b9;
+}
+
+.filter-room ul li:nth-child(1):hover{
+	border:50px solid #2980b9;
+}
+.filter-room ul li:nth-child(2){
+	background-color:#9b59b6;
+}
+.filter-room ul li:nth-child(2):hover{
+	border:40px solid #8e44ad;
+}
+.filter-room ul li:nth-child(3):hover{
+	border:40px solid #34495e;
+}
+@keyframes cir{
+	
+	100%{
+		transform:translateY(45px);
+	}
+}
+
+.filter-room ul li a{
+	color:white;
+	font-size:21px;
+
+}
+
+#messages{
+	background-color:tomato;
+	text-align: center;
+	width:30%;
+	height:40px;
+	font-size:20px;
+	padding:20px;
+	margin:auto;
+}

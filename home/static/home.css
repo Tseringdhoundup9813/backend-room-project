@@ -1,0 +1,142 @@
+
+*{
+	margin:0px;
+	padding:0px;
+}
+.container{
+	background-color:rgb(240,240,240);
+	display:grid;
+	width:100%;
+	min-height:100vh;
+	grid-template-columns:repeat(3,28%);
+	grid-gap:1em;
+	justify-content: center;
+	margin:2em 0px;
+
+
+}
+
+.box1{
+	width:100%;
+	min-height:75vh;
+	margin:3em 0;
+	border:1px solid lightgrey;
+	position: relative;
+	box-shadow:1px 1px 5px grey;
+	border-radius:20px 20px 0px 0px;
+	background-color:white;
+	
+
+
+}
+
+/*main img */
+/*the main box of post*/
+.box1 img{
+	width:100%;
+	height:300px;
+	object-fit:cover;
+
+
+}
+.user-img{
+	background-color:lightgrey;
+	width:100px;
+	height:100px;
+	border-radius:100%;
+	z-index:1;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	white-space:pre-wrap;
+
+}
+#hour{
+		position: absolute;
+		right:10px;
+		top:80px;
+}
+#title{
+	font-weight: 400;
+	text-indent:10px;
+}
+#des{
+	padding:10px;
+	font-size:20px;
+	white-space:pre-wrap;
+	overflow:hidden;
+	
+}
+.user-img img{
+	width:100%;
+	height:100px;
+	border:none;
+	object-fit: cover;
+	z-index:1;
+	clip-path:circle(50% at 50% 50%)
+	
+
+}
+#price{
+	background-color:orangered;
+	width:30%;
+	height:4vh;
+	color:white;
+	line-height:23px;
+	text-indent:10px;
+}
+.click{
+	position:absolute;
+	top:0;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+/*profile*/
+
+/*the profile page path*/
+#profile{
+	position: absolute;
+	left:20px;
+	top:20px;
+
+}
+.main-profile{
+	width:100px;
+	height:100px;
+	border-radius:100%;
+	background-color:lightgrey;
+	position:absolute;
+	top:90px;
+	right:20px;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	color:grey;
+
+}
+.main-profile img{
+	width:100%;
+	height:100px;
+	object-fit:cover;
+	clip-path: circle(50% at 50% 50%);
+	
+}
+#upload{
+
+	text-align: center;
+}
+/*upload image*/
+
+
+#messages{
+	background-color:tomato;
+	text-align: center;
+	width:30%;
+	font-size:20px;
+	padding:30px;
+	margin:auto;
+
+}
